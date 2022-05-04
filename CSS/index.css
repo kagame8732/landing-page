@@ -11,6 +11,41 @@ body{
 .index{
     background: linear-gradient(75deg, #fff 50%, #198686 50%);
 }
+
+.checkbtn{
+    font-size: 30px;
+    color: #fff;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+#check{
+    display: none;
+}
+
+@media (max-width: 858px){
+    .checkbtn{
+        display:block;
+        color:#34495e;
+    }
+    #check:checked ~ ul{
+        left: 0;
+    }
+    ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: none;
+        top: 80px;
+        left: -100%;
+        text-align: left;
+        transition: all .5s;
+        float: right;
+    }
+}
+
 .header-menu{
     position: fixed; 
     display: flex;
@@ -45,14 +80,14 @@ body{
 }
 .header ul{
     align-content: center; 
-    display: flex;
     text-align: center;
     justify-content: space-between;
     position: fixed;
     gap: 1em;
     margin-left: 35rem;
     list-style: none;
-  
+    display: flex;
+
 } 
 .header li a {
     text-decoration: none;
@@ -61,7 +96,9 @@ body{
     color: #fff; 
     background: #198686;
     border-radius: 5px;
+
 }
+
 .all {
     display: flex;
     width: auto;
@@ -159,16 +196,15 @@ body{
     display: flex;
 }
 
-.image {
+.image{
     width: 50%;
-    /* position: relative; */
 }
-img {
+img{
     width: 30rem;
     height: 30rem;
     margin: 0%;
 }
-.about-txt {
+.about-txt{
  width: 50%;
  position: relative;
 }
@@ -180,21 +216,21 @@ img {
     margin-top: 90px;
 }
 
-.skills  {
+.skills{
     width: 50%;
 }
-.skill-name {
+.skill-name{
     font-size: 12px;
     font-weight: 700;
     color: #05314e;
     margin: 20px 0;
 }
-.skill-bar {
+.skill-bar{
     height: 10px;
     background: rgb(129, 125, 125);
     border-radius: 4px;
 }
-.skill-per {
+.skill-per{
     height: 10px;
     background: #198686;
     border-radius: 4px;
@@ -246,19 +282,28 @@ img {
   line-height: 1.5em;
 }
 @media (max-width:1280) {
-    .skills {
+    .skills{
         display: block;
         font-size:10px;
     }
-    .btn a {
+    .btn a{
         display: block;
         font-size: 15px;
     }
+
     
 }
-@media (min-width:380px){
+@media (min-width:858px){
     .about-txt{
         padding: 20px;
+    }
+    .skills{
+        display: block;
+        font-size:10px;
+    }
+    .btn a{
+        display: block;
+        font-size: 15px;
     }
 }
 /* Pricing*/
@@ -444,6 +489,10 @@ img {
     .services {
         grid-template-columns: repeat(1, 1fr);
     }
+    .graphical{
+        margin: 0;
+    }
+
 }
 /* Contact us*/
 .contact-section{
